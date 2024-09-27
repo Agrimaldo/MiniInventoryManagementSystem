@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MiniInventoryManagementSyst
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MiniInventoryManagementSystem.Infra", "MiniInventoryManagementSystem.Infra\MiniInventoryManagementSystem.Infra.csproj", "{72E0FF0F-D10A-4228-AC62-FFEDF37916B5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiniInventoryManagementSystem.Worker", "MiniInventoryManagementSystem.Worker\MiniInventoryManagementSystem.Worker.csproj", "{29E08742-FE6F-4E4F-B2FE-19D48FBE1682}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MiniInventoryManagementSystem.Worker", "MiniInventoryManagementSystem.Worker\MiniInventoryManagementSystem.Worker.csproj", "{29E08742-FE6F-4E4F-B2FE-19D48FBE1682}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiniInventoryManagementSystem.Test", "MiniInventoryManagementSystem.Test\MiniInventoryManagementSystem.Test.csproj", "{A9BDFDFA-F68A-4FA1-8BDC-E5E6516B12D3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{29E08742-FE6F-4E4F-B2FE-19D48FBE1682}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{29E08742-FE6F-4E4F-B2FE-19D48FBE1682}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{29E08742-FE6F-4E4F-B2FE-19D48FBE1682}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A9BDFDFA-F68A-4FA1-8BDC-E5E6516B12D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A9BDFDFA-F68A-4FA1-8BDC-E5E6516B12D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A9BDFDFA-F68A-4FA1-8BDC-E5E6516B12D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A9BDFDFA-F68A-4FA1-8BDC-E5E6516B12D3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

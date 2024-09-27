@@ -9,6 +9,7 @@ using MiniInventoryManagementSystem.Infra.Context;
 using MiniInventoryManagementSystem.Infra.Repositories;
 using MiniInventoryManagementSystem.Worker;
 using RabbitMQ.Client;
+using Serilog;
 
 Console.WriteLine("Hello, World!");
 
@@ -16,6 +17,11 @@ IHost host = Host.CreateDefaultBuilder(args)
     .ConfigureServices((hostContext, services) =>
     {
         IConfiguration configuration = hostContext.Configuration;
+
+        Log.Logger = new LoggerConfiguration()
+            .WriteTo.Console()
+            .CreateLogger();
+
         var optionsBuilder = new DbContextOptionsBuilder<MiniInventoryManagementSystemCtx>();
         optionsBuilder.UseSqlServer(configuration.GetConnectionString("sqlServer"));
         services.AddTransient<MiniInventoryManagementSystemCtx>(s => new MiniInventoryManagementSystemCtx(optionsBuilder.Options));
@@ -40,3 +46,4 @@ IHost host = Host.CreateDefaultBuilder(args)
     .Build();
 
 await host.RunAsync();
+Log.CloseAndFlush();
