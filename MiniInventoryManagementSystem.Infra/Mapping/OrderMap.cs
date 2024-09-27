@@ -15,6 +15,8 @@ namespace MiniInventoryManagementSystem.Infra.Mapping
             builder.Property(p => p.Number).HasColumnName("Number");
             builder.Property(p => p.Total).HasColumnName("Total");
             builder.Property(p => p.CreatedAt).HasColumnName("CreatedAt").HasDefaultValue();
+            builder.Property(p => p.UpdatedAt).HasColumnName("UpdatedAt");
+
             builder.Property(p => p.IsCancelled).HasColumnName("IsCancelled");
 
             builder.Property(p => p.CostumerId).HasColumnName("CostumerId");
