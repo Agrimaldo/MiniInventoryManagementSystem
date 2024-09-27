@@ -9,6 +9,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using MiniInventoryManagementSystem.Domain.Dto;
 using MiniInventoryManagementSystem.Domain.Entities;
+using MiniInventoryManagementSystem.Infra.Repositories;
 
 namespace MiniInventoryManagementSystem.Worker
 {

@@ -11,8 +11,6 @@ using MiniInventoryManagementSystem.Worker;
 using RabbitMQ.Client;
 using Serilog;
 
-Console.WriteLine("Hello, World!");
-
 IHost host = Host.CreateDefaultBuilder(args)
     .ConfigureServices((hostContext, services) =>
     {

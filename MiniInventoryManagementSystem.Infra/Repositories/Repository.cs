@@ -30,29 +30,48 @@ namespace MiniInventoryManagementSystem.Infra.Repositories
             return obj;
         }
 
-        public int? Counter<T>(Expression<Func<T, bool>>? conditional = null) where T : class
-        {
-            throw new NotImplementedException();
-        }
-
         public bool Delete<T>(T obj) where T : class
         {
-            throw new NotImplementedException();
-        }
+            _miniInventoryManagementSystemCtx.Database.BeginTransaction();
+            try
+            {
+                _miniInventoryManagementSystemCtx.Set<T>().Remove(obj);
+            }
+            catch (Exception)
+            {
+                _miniInventoryManagementSystemCtx.Database.RollbackTransaction();
+                return false;
+            }
 
-        public List<T>? List<T>(int skip = 0, int take = 50, Expression<Func<T, bool>>? conditional = null) where T : class
-        {
-            throw new NotImplementedException();
-        }
-
-        public List<T>? List<T>(Expression<Func<T, bool>>? conditional = null) where T : class
-        {
-            throw new NotImplementedException();
+            _miniInventoryManagementSystemCtx.Database.CommitTransaction();
+            _miniInventoryManagementSystemCtx.SaveChanges();
+            return true;
         }
 
         public T? Update<T>(T obj) where T : class
         {
-            throw new NotImplementedException();
+            _miniInventoryManagementSystemCtx.Database.BeginTransaction();
+            try
+            {
+                _miniInventoryManagementSystemCtx.Set<T>().Update(obj);
+            }
+            catch (Exception)
+            {
+                _miniInventoryManagementSystemCtx.Database.RollbackTransaction();
+                return null;
+            }
+
+            _miniInventoryManagementSystemCtx.Database.CommitTransaction();
+            _miniInventoryManagementSystemCtx.SaveChanges();
+            return obj;
+        }
+
+        public List<T> List<T>(int skip = 0, int take = 50, Expression<Func<T, bool>>? conditional = null) where T : class
+        {
+            if (conditional == null)
+                conditional = p => true;
+
+            return _miniInventoryManagementSystemCtx.Set<T>().Where(conditional).Skip(skip).Take(take).ToList();
         }
 
         #region Dispose
