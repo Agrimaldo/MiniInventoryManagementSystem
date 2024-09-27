@@ -1,0 +1,6 @@
+@MiniInventoryManagementSystem.API_HostAddress = http://localhost:5233
+
+GET {{MiniInventoryManagementSystem.API_HostAddress}}/api/Order
+Accept: application/json
+
+###
